@@ -1,29 +1,17 @@
 import { Navigate } from 'react-router-dom';
-import { HeroesApp } from '../HeroesApp';
-import { MarvelPage, DcPage } from '../heroes';
+import { HeroesRoutes } from '../heroes/routes/HeroesRoutes';
+import { MarvelPage, DcPage, SearchPage, HeroPage } from '../heroes';
 import { LoginPage } from '../auth';
+import { HeroesLayout } from '../heroes/pages/HeroesLayout';
 
 export const AppRouter = [
   {
     path: '/',
-    element: <HeroesApp />,
-    children: [
-      {
-        index: true,
-        element: <Navigate to='/marvel' />
-      },
-      {
-        path: 'marvel',
-        element: <MarvelPage /> 
-      },
-      {
-        path: 'dc',
-        element: <DcPage /> 
-      },
-      {
-        path: 'login',
-        element: <LoginPage /> 
-      }
-    ]
+    element: <HeroesLayout />,
+    children: HeroesRoutes,
   },
+  {
+    path: 'login',
+    element: <LoginPage />
+  }
 ]

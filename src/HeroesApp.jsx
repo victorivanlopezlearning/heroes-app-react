@@ -1,16 +1,8 @@
-import { Outlet } from "react-router-dom"
-import { Navbar } from './ui';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { AppRouter } from './router/AppRouter';
+
+const router = createBrowserRouter(AppRouter);
 
 export const HeroesApp = () => {
-  return (
-    <>
-      <header>
-        <Navbar />
-      </header>
-
-      <main className="container mt-5">
-        <Outlet />
-      </main>
-    </>
-  )
+  return <RouterProvider router={router} />
 }
