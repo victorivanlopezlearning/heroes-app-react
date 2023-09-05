@@ -8,12 +8,12 @@ export const HeroList = ({ publisher }) => {
   return (
     <ul className="list-group">
       {
-        heroes.map((heroe) => (
+        heroes.map((hero) => (
           <li
             className="list-group-item"
-            key={heroe.id}
+            key={hero.id}
           >
-            {heroe.superhero}
+            {hero.superhero}
           </li>
         ))
       }
