@@ -23,7 +23,7 @@ export const HeroesRoutes = [
     element: <SearchPage />
   },
   {
-    path: 'hero',
+    path: 'hero/:heroId',
     element: <HeroPage />
   },
 ];
