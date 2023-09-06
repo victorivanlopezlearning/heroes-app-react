@@ -11,56 +11,54 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark px-5">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+      <div className="container-fluid container">
+        <Link
+          className="navbar-brand"
+          to="/"
+        >
+          Asociaciones
+        </Link>
+        <ul className="navbar-nav me-auto">
+          <li className="nav-item">
+            <NavLink
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              to="/marvel"
+            >
+              Marvel
+            </NavLink>
+          </li>
+          <li className="nav-item">
 
-      <Link
-        className="navbar-brand"
-        to="/"
-      >
-        Asociaciones
-      </Link>
-
-      <div className="navbar-collapse">
-        <div className="navbar-nav">
-
-          <NavLink
-            className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
-            to="/marvel"
-          >
-            Marvel
-          </NavLink>
-
-          <NavLink
-            className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
-            to="/dc"
-          >
-            DC
-          </NavLink>
-
-          <NavLink
-            className={({ isActive }) => `nav-item nav-link ${isActive ? 'active' : ''}`}
-            to="/search"
-          >
-            Search
-          </NavLink>
-        </div>
-      </div>
-
-      <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
-        <ul className="navbar-nav ml-auto">
+            <NavLink
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              to="/dc"
+            >
+              DC
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              to="/search"
+            >
+              Search
+            </NavLink>
+          </li>
+        </ul>
+        <div className="d-flex align-items-center">
           <span
-            className='nav-item nav-link text-primary'
+            className='text-primary me-3'
           >
             Víctor Iván
           </span>
-
           <button
-            className='nav-item nav-link btn'
+            className='btn btn-outline-light'
             onClick={onLogout}
           >
             Logout
           </button>
-        </ul>
+        </div>
       </div>
     </nav>
   )
