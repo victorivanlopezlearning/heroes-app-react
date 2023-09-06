@@ -1,14 +1,19 @@
+import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm'
+import { getHeroesByName } from '../helpers';
+import { HeroCard } from '../components/HeroCard';
 
 export const SearchPage = () => {
+  
+  const [searchParams, setSearchParams] = useSearchParams();
+  const heroSearch = searchParams.get('q') || '';
 
   const { search, onInputChange, onResetForm } = useForm({
-    search: ''
+    search: heroSearch
   });
-  const [searchParams, setSearchParams] = useSearchParams();
 
-  const heroSearch = searchParams.get('q') || '';
+  const heroes = useMemo(() => getHeroesByName(heroSearch), [heroSearch]);
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +27,7 @@ export const SearchPage = () => {
     <>
       <h1>Búsqueda</h1>
 
-      <div className="row mt-4">
+      <div className="row my-4">
         <div className="col-12 col-md-4 mb-4 mb-md-0">
           <form
             onSubmit={onSearchSubmit}
@@ -52,6 +57,15 @@ export const SearchPage = () => {
           <div className="alert alert-danger" role="alert">
             <span className="fw-bold">{heroSearch}</span> no encontrado. Favor de buscar otro heroe
           </div>
+
+          {
+            heroes.map(hero => (
+              <HeroCard 
+                key={hero.id}
+                {...hero} 
+              />
+            ))
+          }
 
         </div>
       </div>
