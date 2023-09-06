@@ -42,7 +42,7 @@ export const Navbar = () => {
               className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
               to="/search"
             >
-              Search
+              Buscar
             </NavLink>
           </li>
         </ul>
