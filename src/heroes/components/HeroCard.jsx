@@ -13,7 +13,7 @@ export const HeroCard = ({
   const charactersWithoutAlterEgo = ![characters].includes(alter_ego);
 
   return (
-    <div className="col-md">
+    <div className="col-md animate__animated animate__zoomInUp">
       <div className="card">
         <div className="row no-gutters">
           <div className="col col-md-4">
