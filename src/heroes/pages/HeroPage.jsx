@@ -39,16 +39,16 @@ export const HeroPage = () => {
             <span className='fw-normal'> {alter_ego}</span>
           </li>
           <li className='list-group-item fw-bold'>
-            Publisher:
+            Editorial:
             <span className='fw-normal'> {publisher}</span>
           </li>
           <li className='list-group-item fw-bold'>
-            First Appearance:
+            Primera aparición:
             <span className='fw-normal'> {first_appearance}</span>
           </li>
         </ul>
 
-        <h5 className='mt-3 fw-bold'>Characters</h5>
+        <h5 className='mt-3 fw-bold'>Personajes</h5>
         <p>{characters}</p>
 
         <button
