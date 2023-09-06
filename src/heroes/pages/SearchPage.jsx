@@ -5,22 +5,23 @@ import { getHeroesByName } from '../helpers';
 import { HeroCard } from '../components/HeroCard';
 
 export const SearchPage = () => {
-  
-  const [searchParams, setSearchParams] = useSearchParams();
-  const heroSearch = searchParams.get('q') || '';
 
-  const { search, onInputChange, onResetForm } = useForm({
+  const [searchParams, setSearchParams] = useSearchParams();
+  const heroSearch = useMemo(() => searchParams.get('q') || '', [searchParams]);
+
+  const { search, onInputChange } = useForm({
     search: heroSearch
   });
 
   const heroes = useMemo(() => getHeroesByName(heroSearch), [heroSearch]);
+  const showSearch = useMemo(() => heroSearch.length > 0, [heroSearch]);
+  const showError = useMemo(() => (heroSearch.length > 0 && heroes.length === 0), [heroSearch, heroes]);
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
     if ([search.trim()].includes('')) return;
 
     setSearchParams(`?q=${search}`);
-    onResetForm();
   }
 
   return (
@@ -50,23 +51,25 @@ export const SearchPage = () => {
         </div>
 
         <div className="col-12 col-md-8">
-          <div className="alert alert-secondary" role="alert">
-            Busca un heroe
-          </div>
-
-          <div className="alert alert-danger" role="alert">
-            <span className="fw-bold">{heroSearch}</span> no encontrado. Favor de buscar otro heroe
-          </div>
 
           {
-            heroes.map(hero => (
-              <HeroCard 
-                key={hero.id}
-                {...hero} 
-              />
-            ))
+            showSearch 
+              ? heroes.map(hero => <HeroCard key={hero.id} {...hero} />)
+              : (
+                <div className="alert alert-secondary" role="alert">
+                Busca un heroe
+              </div>
+              )
+            
           }
 
+          {
+            showError && (
+              <div className="alert alert-danger" role="alert">
+                <span className="fw-bold">{heroSearch}</span> no encontrado. Favor de buscar otro heroe
+              </div>
+            )
+          }
         </div>
       </div>
     </>
