@@ -3,6 +3,7 @@ import { HeroesRoutes } from '../heroes/routes/HeroesRoutes';
 import { LoginPage } from '../auth';
 import { HeroesLayout } from '../heroes/pages/HeroesLayout';
 import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRoute';
 
 export const AppRouter = [
   {
@@ -15,6 +16,9 @@ export const AppRouter = [
   },
   {
     path: 'login',
-    element: <LoginPage />
+    element:
+      <PublicRoute>
+        <LoginPage />
+      </PublicRoute>
   }
 ]
