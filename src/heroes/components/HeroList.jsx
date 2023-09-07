@@ -8,7 +8,7 @@ export const HeroList = ({ publisher }) => {
 
 
   return (
-    <div className="row rows-cols-1 row-cols-md-3 g-3 my-2">
+    <div className="row g-3 my-2">
       {
         heroes.map((hero) => (
           <HeroCard

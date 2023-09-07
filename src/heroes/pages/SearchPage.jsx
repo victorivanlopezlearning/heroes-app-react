@@ -51,7 +51,7 @@ export const SearchPage = () => {
         </div>
 
         <div className="col-12 col-md-8">
-
+          <div className='row g-3'>
           {
             showSearch 
               ? heroes.map(hero => <HeroCard key={hero.id} {...hero} />)
@@ -70,6 +70,8 @@ export const SearchPage = () => {
               </div>
             )
           }
+          </div>
+
         </div>
       </div>
     </>

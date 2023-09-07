@@ -13,25 +13,26 @@ export const HeroCard = ({
   const charactersWithoutAlterEgo = ![characters].includes(alter_ego);
 
   return (
-    <div className="col-md animate__animated animate__zoomInUp">
+    <div className="col-md-6 animate__animated animate__zoomInUp">
       <div className="card">
-        <div className="row no-gutters">
+        <div className="row g-0">
           <div className="col col-md-4">
-            <img className="card-img-top" src={heroImageUrl} alt={`Imagen de ${superhero}`} />
+            <img className="img-thumbnail rounded-start" src={heroImageUrl} alt={`Imagen de ${superhero}`} />
           </div>
 
           <div className="col col-md-8">
             <div className="card-body">
               <h4 className="card-title">{superhero}</h4>
               <p className="card-text">{alter_ego}</p>
-              {charactersWithoutAlterEgo && <p>{characters}</p>}
+              {charactersWithoutAlterEgo && <p className="card-text">{characters}</p>}
               <p className="card-text">
                 <small className="text-muted">{first_appearance}</small>
               </p>
               <Link
                 to={`/hero/${id}`}
+                className="link-dark fw-bold link-offset-2 link-underline-opacity-30 link-underline-opacity-100-hover"
               >
-                Más...
+                Ver detalles
               </Link>
             </div>
           </div>
