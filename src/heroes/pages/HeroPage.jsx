@@ -19,7 +19,7 @@ export const HeroPage = () => {
 
   const { id, superhero, alter_ego, characters, first_appearance, publisher } = hero;
 
-  const heroImageUrl = `/assets/heroes/${id}.jpg`;
+  const heroImageUrl = `/img/heroes/${id}.jpg`;
 
   return (
     <>
