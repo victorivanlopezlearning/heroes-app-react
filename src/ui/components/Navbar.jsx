@@ -20,51 +20,56 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3">
       <div className="container-fluid container">
-        <Link
-          className="navbar-brand"
-          to="/"
-        >
-          Asociaciones
-        </Link>
-        <ul className="navbar-nav me-auto">
-          <li className="nav-item">
-            <NavLink
-              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-              to="/marvel"
-            >
-              Marvel
-            </NavLink>
-          </li>
-          <li className="nav-item">
+          <Link
+            className="navbar-brand"
+            to="/"
+          >
+            Asociaciones
+          </Link>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarToggle">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                to="/marvel"
+              >
+                Marvel
+              </NavLink>
+            </li>
+            <li className="nav-item">
 
-            <NavLink
-              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-              to="/dc"
+              <NavLink
+                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                to="/dc"
+              >
+                DC
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                to="/search"
+              >
+                Buscar
+              </NavLink>
+            </li>
+          </ul>
+          <div className="d-flex align-items-center justify-content-between justify-content-md-start">
+            <span
+              className='text-primary me-md-3'
             >
-              DC
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-              to="/search"
+              {user?.name}
+            </span>
+            <button
+              className='btn btn-outline-light'
+              onClick={onLogout}
             >
-              Buscar
-            </NavLink>
-          </li>
-        </ul>
-        <div className="d-flex align-items-center">
-          <span
-            className='text-primary me-3'
-          >
-            {user?.name}
-          </span>
-          <button
-            className='btn btn-outline-light'
-            onClick={onLogout}
-          >
-            Cerrar Sesión
-          </button>
+              Cerrar Sesión
+            </button>
+          </div>
         </div>
       </div>
     </nav>
