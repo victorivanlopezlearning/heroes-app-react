@@ -56,7 +56,7 @@ export const Navbar = () => {
             className='btn btn-outline-light'
             onClick={onLogout}
           >
-            Logout
+            Cerrar Sesión
           </button>
         </div>
       </div>

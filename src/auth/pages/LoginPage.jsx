@@ -12,13 +12,13 @@ export const LoginPage = () => {
 
   return (
     <main className="container mt-5">
-      <h1>Login</h1>
+      <h1>Inicia sesión en tu cuenta</h1>
 
       <button
         className="btn btn-dark mt-2"
         onClick={onLogin}
       >
-        Login
+        Iniciar Sesión
       </button>
     </main>
   )
