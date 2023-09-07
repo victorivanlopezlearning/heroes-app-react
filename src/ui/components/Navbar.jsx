@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../auth/context';
 
 export const Navbar = () => {
+
+  const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -50,7 +54,7 @@ export const Navbar = () => {
           <span
             className='text-primary me-3'
           >
-            Víctor Iván
+            {user?.name}
           </span>
           <button
             className='btn btn-outline-light'
