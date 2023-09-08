@@ -9,7 +9,8 @@ export const HeroCard = ({
   characters
 }) => {
 
-  const heroImageUrl = `/heroes-app-react/img/heroes/${id}.jpg`;
+  // const heroImageUrl = `/heroes-app-react/img/heroes/${id}.jpg`;
+  const heroImageUrl = `/img/heroes/${id}.jpg`;
   const charactersWithoutAlterEgo = ![characters].includes(alter_ego);
 
   return (
