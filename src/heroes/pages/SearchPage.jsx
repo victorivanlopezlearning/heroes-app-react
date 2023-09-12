@@ -31,6 +31,7 @@ export const SearchPage = () => {
       <div className="row my-4">
         <div className="col-12 col-md-4 mb-4 mb-md-0">
           <form
+            role='form'
             onSubmit={onSearchSubmit}
           >
             <div className="mb-3">

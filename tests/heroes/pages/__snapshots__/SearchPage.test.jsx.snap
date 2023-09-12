@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in <SearchPage /> should show with default values 1`] = `
+<div>
+  <header>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark py-3"
+    >
+      <div
+        class="container-fluid container"
+      >
+        <a
+          class="navbar-brand"
+          href="/"
+        >
+          Asociaciones
+        </a>
+        <button
+          aria-controls="navbarToggle"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          class="navbar-toggler"
+          data-bs-target="#navbarToggle"
+          data-bs-toggle="collapse"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarToggle"
+        >
+          <ul
+            class="navbar-nav me-auto mb-2 mb-lg-0"
+          >
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link "
+                href="/marvel"
+              >
+                Marvel
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link "
+                href="/dc"
+              >
+                DC
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                aria-current="page"
+                class="nav-link active"
+                href="/search"
+              >
+                Buscar
+              </a>
+            </li>
+          </ul>
+          <div
+            class="d-flex align-items-center justify-content-between justify-content-md-start"
+          >
+            <span
+              class="text-primary me-md-3"
+            />
+            <button
+              class="btn btn-outline-light"
+            >
+              Cerrar Sesión
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main
+    class="container mt-5"
+  >
+    <h1>
+      Búsqueda
+    </h1>
+    <div
+      class="row my-4"
+    >
+      <div
+        class="col-12 col-md-4 mb-4 mb-md-0"
+      >
+        <form
+          role="form"
+        >
+          <div
+            class="mb-3"
+          >
+            <input
+              autocomplete="off"
+              class="form-control"
+              id="search"
+              name="search"
+              placeholder="Nombre del heroe"
+              type="text"
+              value=""
+            />
+          </div>
+          <button
+            class="btn btn-dark"
+            type="submit"
+          >
+            Buscar
+          </button>
+        </form>
+      </div>
+      <div
+        class="col-12 col-md-8"
+      >
+        <div
+          class="row g-3"
+        >
+          <div
+            class="alert alert-secondary"
+            role="alert"
+          >
+            Busca un heroe
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+`;
