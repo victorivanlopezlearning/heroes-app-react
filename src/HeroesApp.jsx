@@ -1,8 +1,8 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 import { AppRouter } from './router/AppRouter';
 import { AuthProvider } from './auth';
 
-const router = createBrowserRouter(AppRouter);
+const router = createHashRouter(AppRouter);
 
 export const HeroesApp = () => {
   return (
